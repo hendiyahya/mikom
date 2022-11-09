@@ -28,6 +28,8 @@ class PermissionRoleTableSeeder extends Seeder
         $manager = Role::create(['name' => 'manager']);
         $executive = Role::create(['name' => 'executive']);
         $user = Role::create(['name' => 'user']);
+        $supervisor = Role::create(['name' => 'supervisor']);
+        
 
         // Create Permissions
         Permission::firstOrCreate(['name' => 'view_backend']);
@@ -66,6 +68,7 @@ class PermissionRoleTableSeeder extends Seeder
         $admin->givePermissionTo(Permission::all());
         $manager->givePermissionTo('view_backend');
         $executive->givePermissionTo('view_backend');
+        $supervisor->givePermissionTo('view_backend');
 
         Schema::enableForeignKeyConstraints();
     }

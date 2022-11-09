@@ -102,6 +102,21 @@ class UserTableSeeder extends Seeder
                 'created_at'        => Carbon::now(),
                 'updated_at'        => Carbon::now(),
             ],
+            [
+                'first_name'        => 'Supervisor',
+                'last_name'         => 'Project',
+                'name'              => 'Supervisor Project',
+                'email'             => 'super@visor.com',
+                'password'          => Hash::make('secret'),
+                'username'          => '100006',
+                'mobile'            => $faker->phoneNumber,
+                'date_of_birth'     => $faker->date,
+                'avatar'            => 'img/default-avatar.jpg',
+                'gender'            => $faker->randomElement(['Male', 'Female', 'Other']),
+                'email_verified_at' => Carbon::now(),
+                'created_at'        => Carbon::now(),
+                'updated_at'        => Carbon::now(),
+            ],
         ];
 
         foreach ($users as $user_data) {

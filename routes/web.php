@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\LanguageController;
+use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\LevelController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -141,3 +143,6 @@ Route::group(['namespace' => 'App\Http\Controllers\Backend', 'prefix' => 'admin'
     Route::patch("$module_name/{id}/block", ['as' => "$module_name.block", 'uses' => "$controller_name@block", 'middleware' => ['permission:block_users']]);
     Route::patch("$module_name/{id}/unblock", ['as' => "$module_name.unblock", 'uses' => "$controller_name@unblock", 'middleware' => ['permission:block_users']]);
 });
+
+Route::resource('empmanagement', EmployeeController::class);
+Route::resource('emplevel', LevelController::class);
